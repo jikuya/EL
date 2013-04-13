@@ -11,6 +11,7 @@ use Plack::Util;
 use Plack::Builder;
 
 builder {
+    mount '/api/' => Plack::Util::load_psgi('api.psgi');
     mount '/admin/' => Plack::Util::load_psgi('admin.psgi');
     mount '/' => Plack::Util::load_psgi('pc.psgi');
 };

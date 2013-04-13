@@ -26,25 +26,16 @@ sub setup_schema {
 use Teng;
 use Teng::Schema::Loader;
 use EL::DB;
-my $schema;
 sub db {
     my $self = shift;
     if ( !defined $self->{db} ) {
         my $conf = $self->config->{'DBI'}
-        or die "missing configuration for 'DBI'";
+            or die "missing configuration for 'DBI'";
         my $dbh = DBI->connect(@{$conf});
-        if ( !defined $schema ) {
-            $self->{db} = Teng::Schema::Loader->load(
-                namespace => 'EL::DB',
-                dbh       => $dbh,
-	    );
-            $schema = $self->{db}->schema;
-        } else {
-            $self->{db} = EL::DB->new(
-                dbh    => $dbh,
-                schema => $schema,
-	    );
-        }
+        $self->{db} = Teng::Schema::Loader->load(
+            namespace => 'EL::DB',
+            dbh       => $dbh,
+        );
     }
     return $self->{db};
 }

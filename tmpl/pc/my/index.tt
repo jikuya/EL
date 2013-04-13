@@ -1,0 +1,8 @@
+[% WRAPPER 'include/layout.tt' %]
+
+<h1>マイページ</h1>
+
+<a href="/contents/select">勉強するコンテンツを選ぶ</a>
+<a href="/study/today">今日の勉強</a>
+
+[% END %]

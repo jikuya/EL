@@ -1,0 +1,20 @@
+[% WRAPPER 'include/layout.tt' %]
+
+<h1>コンテンツを選ぼう</h1>
+
+<form method="post" action="/contents/select_exec" class="form-horizontal">
+    <fieldset>
+        <div class="control-group">
+            <select name="contents_id">
+                [% FOR item IN contents %]
+                    <option value="[% item.contents_id %]">[% item.contents_name %]</option>
+                [% END %]
+            </select>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">選択する</button>
+        </div>
+    </fieldset>
+</form>
+
+[% END %]

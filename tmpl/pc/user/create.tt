@@ -1,0 +1,29 @@
+[% WRAPPER 'include/layout.tt' %]
+
+[% IF has_error %]
+    <form method="post" action="/user/create" class="form-horizontal">
+        <fieldset>
+            <legend>ユーザ作成</legend>
+            <div class="control-group">
+                <label class="control-label" for="input01">ニックネーム</label>
+                <div class="controls">
+                    <input type="text" class="input-xlarge" id="user_name" name="user_name">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">パスワード</label>
+                <div class="controls">
+                    <input type="password" class="input-xlarge" id="password" name="password">
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">ユーザを作成する</button>
+            </div>
+        </fieldset>
+    </form>
+[% ELSE %]
+    <p>done</p>
+    <a href="/my/">マイページ</a>
+[% END %]
+
+[% END %]

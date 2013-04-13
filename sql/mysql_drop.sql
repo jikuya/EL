@@ -1,0 +1,15 @@
+DROP TABLE sessions;
+DROP TABLE user_data;
+DROP TABLE user_relation;
+DROP TABLE user_study_log;
+DROP TABLE user_contents_study_log;
+DROP TABLE user_contents_item_study_log;
+DROP TABLE user_review_contents_item;
+DROP TABLE contents;
+DROP TABLE contents_item;
+DROP TABLE contents_owner;
+DROP TABLE grade;
+DROP TABLE subject;
+DROP TABLE sticker;
+DROP TABLE user_sticker;
+DROP TABLE user_schedule;

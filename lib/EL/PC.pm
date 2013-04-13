@@ -33,6 +33,15 @@ sub show_error {
     return $res;
 }
 
+my $user_data;
+sub user_data {
+    my $self = shift;
+    unless ($user_data) {
+        $user_data = $self->session->get('user_data');
+    }
+    return $user_data;
+}
+
 # for your security
 __PACKAGE__->add_trigger(
     AFTER_DISPATCH => sub {
