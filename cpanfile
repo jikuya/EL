@@ -15,6 +15,9 @@ requires 'Plack::Session'                  => '0.14';
 requires 'String::CamelCase'               => '0.02';
 requires 'Test::WWW::Mechanize::PSGI'      => '0';
 requires 'Time::Piece'                     => '1.20';
+requires 'Data::Util'                      => '0.62';
+requires 'Data::Validator'                 => '1.02';
+requires 'UNIVERSAL::require'              => '0.13';
 
 on 'configure' => sub {
    requires 'Module::Build'     => '0.38';

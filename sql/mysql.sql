@@ -55,6 +55,7 @@ CREATE TABLE IF NOT EXISTS `contents` (
   PRIMARY KEY (`contents_id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 INSERT IGNORE INTO `contents` VALUES (1, 'なんばんめ', 1, 1, 1, 1);
+INSERT IGNORE INTO `contents` VALUES (2, '足し算', 1, 1, 1, 1);
 CREATE TABLE IF NOT EXISTS `contents_item` (
   `contents_item_id` INT NOT NULL,
   `contents_id` INT NOT NULL,
@@ -64,10 +65,7 @@ CREATE TABLE IF NOT EXISTS `contents_item` (
   `status` TINYINT NOT NULL,
   PRIMARY KEY (`contents_item_id`,`contents_id`,`contents_type`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
-INSERT IGNORE INTO `contents_item` VALUES (1, 1, '前後・上下', '{}', 1, 1);
-INSERT IGNORE INTO `contents_item` VALUES (2, 1, '左右・まとめ', '{}', 1, 1);
-INSERT IGNORE INTO `contents_item` VALUES (1, 1, '前後・上下', '{}', 2, 1);
-INSERT IGNORE INTO `contents_item` VALUES (2, 1, '左右・まとめ', '{}', 2, 1);
+INSERT IGNORE INTO `contents_item` VALUES (1, 1, '前後・上下', '{[{"order":1,"content":{"type":1,"name":"左右で考える","q":"ねぎは、ひだりから、なんばんめですか？","choices":{"1":"1ばんめ","2":"2ばんめ","3":"3ばんめ","4":"4ばんめ"},"a":"4"},"source":{"img_path":"/static/contents/1676.jpg"}},{"order":2,"content":{"type":1,"name":"左右で考える","q":"とまとは、みぎから、なんばんめですか？","choices":{"1":"2ばんめ","2":"3ばんめ","3":"4ばんめ","4":"5ばんめ"},"a":"2"},"source":{"img_path":"/static/contents/1676.jpg"}},{"order":3,"content":{"type":1,"name":"左右で考える","q":"ひだりから、３なんばんめは、なんですか？","choices":{"1":"にんじん","2":"たまねぎ","3":"ねぎ","4":"とまと"},"a":"2"},"source":{"img_path":"/static/contents/1676.jpg"}}]}', 1, 1);
 CREATE TABLE IF NOT EXISTS `contents_owner` (
   `contents_owner_id` INT NOT NULL,
   `contents_owner_name` VARCHAR(255) NOT NULL,
